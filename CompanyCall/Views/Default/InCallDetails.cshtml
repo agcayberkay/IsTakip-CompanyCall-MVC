@@ -1,0 +1,32 @@
+﻿@using CompanyCall.Models.Entity
+@model List<InCallDetails>
+
+@{
+    ViewBag.Title = "InCallDetails";
+    Layout = "~/Views/Shared/CompanyLayout.cshtml";
+}
+
+<h2>In Call Details</h2>
+
+<table class="table table-bordered">
+    <tr>
+
+    <th>Call</th>
+    <th>Descriptions</th>
+    <th>Date</th>
+    <th>Hour</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            
+            <td>@x.Call</td>
+            <td>@x.Description</td>
+            <td>@x.Date</td>
+            <td>@x.Hour</td>
+
+        </tr>
+
+    }
+</table>

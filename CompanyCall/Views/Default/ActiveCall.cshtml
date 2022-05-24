@@ -1,0 +1,37 @@
+﻿@using CompanyCall.Models.Entity;
+
+
+
+    @{
+        ViewBag.Title = "ActiveCall";
+        Layout = "~/Views/Shared/CompanyLayout.cshtml";
+    }
+
+
+    <h2>Active Call</h2>
+
+    <table class="table table-bordered">
+
+        <tr>
+            
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Details</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+               
+                <td>@x.Subjects</td>
+                <td>@x.Dates</td>
+                <td><a href="#" class="btn btn-success">Edit</a></td>
+                <td><a href="/Default/InCallDetails/@x.ID/" class="btn btn-info">Details</a></td>
+            </tr>
+
+        }
+
+
+    </table>
+    <a href="/Default/NewCall" class="btn btn-primary">New Call</a>
+

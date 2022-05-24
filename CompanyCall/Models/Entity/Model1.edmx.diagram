@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b6d37f3bf7c4444fbc86c36d4e8e7367" Name="Diagram1">
+        <EntityTypeShape EntityType="IsTakipModel.AdminLogin" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipModel.Company" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipModel.Departments" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipModel.InCall" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipModel.MissionDetails" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipModel.Personels" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipModel.Tasks" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="IsTakipModel.FK_InCall_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="IsTakipModel.FK_Personels_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="IsTakipModel.FK_MissionDetails_Tasks" ManuallyRouted="false" />
+        <AssociationConnector Association="IsTakipModel.FK_Tasks_Personels" ManuallyRouted="false" />
+        <AssociationConnector Association="IsTakipModel.FK_Tasks_Personels1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="IsTakipModel.InCallDetails" Width="1.5" PointX="5.25" PointY="7.5" />
+        <AssociationConnector Association="IsTakipModel.FK_InCallDetails_InCall" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
