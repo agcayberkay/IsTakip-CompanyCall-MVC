@@ -22,6 +22,7 @@
           <Property Name="Competent" Type="nvarchar" MaxLength="30" />
           <Property Name="Phone" Type="nvarchar" MaxLength="20" />
           <Property Name="Mail" Type="nvarchar" MaxLength="60" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="30" />
           <Property Name="Sector" Type="nvarchar" MaxLength="30" />
           <Property Name="Province" Type="nvarchar" MaxLength="30" />
           <Property Name="Distirct" Type="nvarchar" MaxLength="30" />
@@ -221,6 +222,7 @@
           <Property Name="Distirct" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="InCall" Relationship="Self.FK_InCall_Company" FromRole="Company" ToRole="InCall" />
+          <Property Name="Sifre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Departments">
           <Key>
@@ -419,6 +421,7 @@
           <EntitySetMapping Name="Company">
             <EntityTypeMapping TypeName="IsTakipModel.Company">
               <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Competent" ColumnName="Competent" />

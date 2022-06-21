@@ -29,6 +29,7 @@ namespace CompanyCall.Models.Entity
         public string Province { get; set; }
         public string Distirct { get; set; }
         public string Address { get; set; }
+        public string Sifre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InCall> InCall { get; set; }

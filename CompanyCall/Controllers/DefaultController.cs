@@ -50,5 +50,23 @@ namespace CompanyCall.Controllers
             var cagri = db.InCallDetails.Where(x => x.Call == id).ToList();
             return View(cagri);
         }
+
+        public ActionResult GetCall(int id)
+        {
+            var call = db.InCall.Find(id);
+            return View("GetCall",call);
+        }
+
+        public ActionResult EditCall(InCall ın)
+        {
+            var call = db.InCall.Find(ın.ID);
+            call.Descriptions = ın.Descriptions;
+            call.Subjects = ın.Subjects;
+            db.SaveChanges();
+            return RedirectToAction("ActiveCall");
+
+        }
+
+
     }
 }
