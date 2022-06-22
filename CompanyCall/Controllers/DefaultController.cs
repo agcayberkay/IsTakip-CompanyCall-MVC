@@ -18,8 +18,10 @@ namespace CompanyCall.Controllers
         IsTakipEntities db = new IsTakipEntities();
         public ActionResult ActiveCall()
         {
-            var Incall = db.InCall.ToList();
-            return View(Incall);
+            var sesion = Session["Mail"];
+            ViewBag.m = sesion;
+            var cagrilar = db.InCall.Where(x => x.Durum == true && x.CallCompany == 4).ToList();
+            return View(cagrilar);
         }
 
         public ActionResult InactiveCall()
@@ -66,7 +68,6 @@ namespace CompanyCall.Controllers
             return RedirectToAction("ActiveCall");
 
         }
-
 
     }
 }

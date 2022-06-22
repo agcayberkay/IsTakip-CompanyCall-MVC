@@ -1,6 +1,6 @@
 ﻿@model CompanyCall.Models.Entity.Company
 @{
-    
+
     Layout = null;
 }
 
@@ -23,7 +23,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="~/login-form-08/css/style.css">
 
-    <title>Login in BSS Job Tracking</title>
+    <title>Login İn</title>
 </head>
 <body>
 
@@ -40,9 +40,9 @@
                         <div class="col-md-8">
                             <div class="mb-4">
                                 <h3>Sign In to <strong>BSS Job Tracking</strong></h3>
-                                <p class="mb-4">Çağrı oluşturmak , çağrılarınızı takip etmek için lütfen oturum açın.</p>
+                                <p class="mb-4">Please log in to create a call and track your calls.</p>
                             </div>
-                            <form  method="post">
+                            <form method="post">
                                 <div class="form-group first">
                                     <label for="username">Username</label>
                                     <input type="text" class="form-control" name="Mail" id="username">
@@ -58,35 +58,30 @@
                                     <label class="control control--checkbox mb-0">
                                         <span class="caption">Remember me</span>
                                         <input type="checkbox" checked="checked" />
-                                        <div class="control__indicator"></div>
+                                        <span class="control__indicator"></span>
                                     </label>
                                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                                 </div>
 
                                 <input type="submit" value="Log In" class="btn text-white btn-block btn-primary">
 
-                                <span class="d-block text-left my-4 text-muted"> or sign in with</span>
-
-                                <div class="social-login">
-                                    <a href="#" class="facebook">
-                                        <span class="icon-facebook-official"></span>
-                                    </a>
-                                    <a href="#" class="twitter">
-                                        <span class="icon-twitter></span>
-                                    </a>
-                                    <a href="http://bss.com.tr/" class="google">
-                                        <span class="icon-google"></span>
-                                    </a>
+                                <div style="padding-top:10px">
+                                    <span class="label-info">
+                                        <a href="#" class="sign-up">Sign Up</a>
+                                    </span>
+                      
                                 </div>
-                            </form>
+                                </form>
                         </div>
+                      
                     </div>
-
                 </div>
 
             </div>
+
         </div>
     </div>
+
 
 
     <script src="~/login-form-08/js/jquery-3.3.1.min.js"></script>

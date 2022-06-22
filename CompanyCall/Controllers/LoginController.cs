@@ -30,7 +30,7 @@ namespace CompanyCall.Controllers
             }
             else
             {
-                return RedirectToAction("Index","Views/Login/Index");
+                return RedirectToAction("Index","Login");
             }
            
         }
