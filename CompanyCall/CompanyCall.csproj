@@ -498,6 +498,7 @@
     <Content Include="Views\Default\NewCall.cshtml" />
     <Content Include="Views\Default\InCallDetails.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Default\EditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

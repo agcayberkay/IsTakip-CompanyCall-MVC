@@ -13,21 +13,27 @@ namespace CompanyCall.Controllers
         {
             return View();
         }
+        
+
 
 
         IsTakipEntities db = new IsTakipEntities();
         public ActionResult ActiveCall()
         {
-            var sesion = Session["Mail"];
-            ViewBag.m = sesion;
-            var cagrilar = db.InCall.Where(x => x.Durum == true && x.CallCompany == 4).ToList();
+            var mail = (string)Session["Mail"];
+            ViewBag.m = mail;
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
+            var cagrilar = db.InCall.Where(x => x.Durum == true && x.CallCompany == id).ToList();
             return View(cagrilar);
         }
 
         public ActionResult InactiveCall()
         {
-            var InactiveCall = db.InCall.Where(x => x.Durum == false).ToList();
-            return View(InactiveCall);
+            var mail = (string)Session["Mail"];
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
+            var cagrilar = db.InCall.Where(x => x.CallCompany == id && x.Durum == false).ToList();
+            //var InactiveCall = db.InCall.Where(x => x.Durum == false).ToList();
+            return View(cagrilar);
         }
 
         [HttpGet]
@@ -39,8 +45,10 @@ namespace CompanyCall.Controllers
         [HttpPost]
         public ActionResult NewCall(InCall ın)
         {
+            var mail = (string)Session["Mail"];
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
             ın.Durum = true;
-            ın.CallCompany = 1;
+            ın.CallCompany = id;
             ın.Dates = DateTime.Parse(DateTime.Now.ToShortDateString());
             db.InCall.Add(ın);
             db.SaveChanges();
@@ -67,6 +75,17 @@ namespace CompanyCall.Controllers
             db.SaveChanges();
             return RedirectToAction("ActiveCall");
 
+        }
+
+        [HttpGet]
+        public ActionResult EditProfile()
+        {
+            var mail = (string)Session["Mail"];
+            ViewBag.f = mail;
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
+
+            var profile = db.Company.Where(x => x.ID == id).FirstOrDefault();
+            return View(profile);
         }
 
     }

@@ -7,7 +7,9 @@
     Layout = "~/Views/Shared/CompanyLayout.cshtml";
 }
 
-<h3>@ViewBag.m</h3>
+<h3 style="color:green">
+    @ViewBag.m</h3">
+<br />
 <br />
 <h2>Active Call</h2>
 
@@ -15,18 +17,17 @@
 <table class="table table-bordered">
 
     <tr>
-        <th>ID</th>
-        <th>Subject</th>
         <th>Date</th>
+        <th>Subject</th>
         <th>Edit</th>
         <th>Details</th>
     </tr>
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.ID</td>
-            <td>@x.Subjects</td>
             <td>@x.Dates</td>
+            <td>@x.Subjects</td>
+
             <td><a href="/Default/GetCall/@x.ID/" class="btn btn-success">Edit</a></td>
             <td><a href="/Default/InCallDetails/@x.ID/" class="btn btn-info">Details</a></td>
         </tr>

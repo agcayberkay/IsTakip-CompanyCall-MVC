@@ -9,19 +9,17 @@
 <table class="table table-bordered">
 
     <tr>
-        <th>ID</th>
-        <th>Subject</th>
         <th>Date
-        <th>Edit</th>
+        <th>Subject</th>
+
         <th>Details</th>
     </tr>
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.ID</td>
-            <td>@x.Subjects</td>
             <td>@x.Dates</td>
-            <td><a href="#" class="btn btn-info">Details</a></td>
+            <td>@x.Subjects</td>
+            <td><a href="/Default/InCallDetails/@x.ID" class="btn btn-info">Details</a></td>
 
         </tr>
 
