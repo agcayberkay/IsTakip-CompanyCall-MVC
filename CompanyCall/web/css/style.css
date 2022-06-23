@@ -57,7 +57,7 @@ a:hover { transition: all 200ms ease-in-out; }
     width: 87%;
 }
 a.sidebar-icon:hover{
-	color:#fff;
+	color:black;
 }
 .page-container.sidebar-collapsed {
   transition: all 100ms linear;
@@ -136,8 +136,8 @@ a.sidebar-icon:hover{
     top: 0;
     left: 0;
     bottom: 0;
-    background-color:black;
-    color: red;
+    background-color:darkgray;
+    color: black;
     box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
 	-o-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
 	-webkit-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
@@ -153,7 +153,7 @@ label.col-sm-2.control-label {
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
-  background-color:darkblue;
+ 
 }
 #menu li {
   position: relative;
@@ -166,24 +166,24 @@ label.col-sm-2.control-label {
   opacity: 0;
   height: 0px;
 }
-#menu li a {
-	font-style: normal;
-    font-weight: 400;
-    position: relative;
-    display: block;
-    padding: 13px 20px;
-    color: red;
-    white-space: nowrap;
-    z-index: 2;
-    background-color: #b52e31;
-    font-size:0.9em;
-    font-family: 'Roboto', sans-serif;
-	border:none;
-	border-left: 4px solid #b52e31;
-}
+	#menu li a {
+		font-style: normal;
+		font-weight: 400;
+		position: relative;
+		display: block;
+		padding: 13px 20px;
+		color: whitesmoke;
+		white-space: nowrap;
+		z-index: 2;
+		background-color: darkgray;
+		font-size: 0.9em;
+		font-family: 'Roboto', sans-serif;
+		border: none;
+		border-left: 4px solid #FFFFFF;
+	}
 #menu li a:hover {
   color: #ffffff;
-  background-color:red;
+  background-color:gray;
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
    border-left: 4px solid #4A4A4A;
 }
@@ -244,8 +244,8 @@ background-color:#00C6D7!important;
     font-size: 19px;
     padding: 8px 10px;
     border-radius: 0px;
-    color: #fff;
-    background: #252525;
+    color: black;
+    background-color:white;
     float: right;
 }
 ul#menu i {
@@ -555,6 +555,8 @@ ul.qty li p{
 /*-- header_top --*/
 .top_bg{
 	background: #252525;
+	padding-left:0px;
+
 }
 .header_top {
     padding: 15px 0 5px;
@@ -563,7 +565,7 @@ ul.qty li p{
 }
 .top_left{
 	float: right;
-	margin 0 auto;
+	margin: 0;
 
 }
 .top_left h2 {

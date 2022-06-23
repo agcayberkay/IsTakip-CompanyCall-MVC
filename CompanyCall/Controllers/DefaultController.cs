@@ -13,8 +13,16 @@ namespace CompanyCall.Controllers
         {
             return View();
         }
-        
 
+        public ActionResult HomePage()
+        {
+            var mail = (string)Session["Mail"];
+            ViewBag.c = mail;
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
+
+            var profile = db.Company.Where(x => x.ID == id).FirstOrDefault();
+            return View(profile);
+        }
 
 
         IsTakipEntities db = new IsTakipEntities();
@@ -64,7 +72,7 @@ namespace CompanyCall.Controllers
         public ActionResult GetCall(int id)
         {
             var call = db.InCall.Find(id);
-            return View("GetCall",call);
+            return View("GetCall", call);
         }
 
         public ActionResult EditCall(InCall ın)
@@ -87,6 +95,8 @@ namespace CompanyCall.Controllers
             var profile = db.Company.Where(x => x.ID == id).FirstOrDefault();
             return View(profile);
         }
+
+
 
     }
 }
