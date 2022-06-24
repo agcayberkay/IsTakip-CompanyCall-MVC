@@ -19,6 +19,8 @@
         <AssociationConnector Association="IsTakipModel.FK_Tasks_Personels1" ManuallyRouted="false" />
         <EntityTypeShape EntityType="IsTakipModel.InCallDetails" Width="1.5" PointX="5.25" PointY="7.5" />
         <AssociationConnector Association="IsTakipModel.FK_InCallDetails_InCall" />
+        <EntityTypeShape EntityType="IsTakipModel.Messages" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="IsTakipModel.sysdiagrams" Width="1.5" PointX="8.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

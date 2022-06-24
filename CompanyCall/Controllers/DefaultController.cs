@@ -19,9 +19,32 @@ namespace CompanyCall.Controllers
             var mail = (string)Session["Mail"];
             ViewBag.c = mail;
             var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
-
             var profile = db.Company.Where(x => x.ID == id).FirstOrDefault();
+            var totalCall = db.InCall.Where(x => x.CallCompany == id).Count();
+            var activeCall = db.InCall.Where(x => x.CallCompany == id && x.Durum == true).Count();
+            var inActiveCall = db.InCall.Where(x => x.CallCompany == id && x.Durum == false).Count();
+            var competent = db.Company.Where(x => x.ID == id).Select(y => y.Competent).FirstOrDefault();
+            var company = db.Company.Where(x => x.ID == id).Select(y => y.Name).FirstOrDefault();
+            var sector = db.Company.Where(x => x.ID == id).Select(y => y.Sector).FirstOrDefault();
+            ViewBag.tCall = totalCall;
+            ViewBag.aCall = activeCall;
+            ViewBag.ınActCall = inActiveCall;
+            ViewBag.competent = competent;
+            ViewBag.company = company;
+            ViewBag.sector = sector;
             return View(profile);
+        }
+
+
+        public PartialViewResult Partial1()
+        {
+            var mail = (string)Session["Mail"];
+            ViewBag.c = mail;
+            var messages = db.Messages.Where(x => x.Receiver == mail).ToList();
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
+            var totalMessage = db.Messages.Where(x => x.ID == id && x.Status == true).Count();
+            ViewBag.totalMessage = totalMessage;
+            return PartialView(messages);
         }
 
 

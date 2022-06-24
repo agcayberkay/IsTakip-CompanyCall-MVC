@@ -33,5 +33,7 @@ namespace CompanyCall.Models.Entity
         public virtual DbSet<Personels> Personels { get; set; }
         public virtual DbSet<Tasks> Tasks { get; set; }
         public virtual DbSet<InCallDetails> InCallDetails { get; set; }
+        public virtual DbSet<Messages> Messages { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
