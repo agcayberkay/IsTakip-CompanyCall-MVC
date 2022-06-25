@@ -39,12 +39,21 @@ namespace CompanyCall.Controllers
         public PartialViewResult Partial1()
         {
             var mail = (string)Session["Mail"];
-            ViewBag.c = mail;
-            var messages = db.Messages.Where(x => x.Receiver == mail).ToList();
-            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
-            var totalMessage = db.Messages.Where(x => x.ID == id && x.Status == true).Count();
+            var messages = db.Messages.Where(x => x.Receiver == mail && x.Status==true).ToList();
+            var totalMessage = db.Messages.Where(x => x.Receiver == mail && x.Status==true).Count();
             ViewBag.totalMessage = totalMessage;
             return PartialView(messages);
+        }
+
+        public PartialViewResult Partial2()
+        {
+            var mail = (string)Session["Mail"];
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
+            var activeCall = db.InCall.Where(x => x.CallCompany == id && x.Dates==DateTime.Today).ToList();
+            var tactiveCall = db.InCall.Where(x => x.CallCompany == id && x.Dates==DateTime.Today).Count();
+            var totalActiveCall = db.InCall.Where(x => x.CallCompany == id && x.Durum==true).Count();      
+            ViewBag.totalActCall = tactiveCall;
+            return PartialView(activeCall);
         }
 
 

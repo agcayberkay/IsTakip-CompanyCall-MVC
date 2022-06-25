@@ -1,24 +1,26 @@
 ﻿@using CompanyCall.Models.Entity
-@model List<Messages>
+@model List<InCall>
+ 
 
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <i class="fa fa-comment-o"></i><span class="badge blue">@ViewBag.totalMessage</span>
+        <i class="fa fa-bell-o"></i><span class="badge blue">@ViewBag.totalActCall</span>
     </a>
     <ul class="dropdown-menu">
         <li>
             <div class="notification_header">
-                <h3> Incoming Message</h3>
+                <h3>You have today new calls notifications</h3>
             </div>
         </li>
-        @foreach (var x in Model)
+
+        @foreach (var y in Model)
         {
             <li>
                 <a href="#" class="grid">
-                    <div class="user_img"><img src="~/web2/web2/starter/assets/images/b.png" alt=""></div>
+                    <div class="user_img"><img src="~/web2/web2/starter/assets/images/avatar1.jpg" alt=""></div>
                     <div class="notification_desc">
-                        <p>@x.Sender</p>
-                        <span>@x.Subject</span>
+                        <p>@y.Subjects</p>
+                        <span>@y.Descriptions</span>
                     </div>
                 </a>
             </li>
@@ -26,8 +28,10 @@
 
         <li>
             <div class="notification_bottom">
-                <a href="#all" class="bg-primary">See all messages</a>
+                <a href="#all" class="bg-primary">See all notifications</a>
             </div>
         </li>
     </ul>
 </li>
+
+
