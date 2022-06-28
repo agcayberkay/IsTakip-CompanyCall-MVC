@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using CompanyCall.Models.Entity;
 namespace CompanyCall.Controllers
 {
@@ -39,8 +40,9 @@ namespace CompanyCall.Controllers
         public PartialViewResult Partial1()
         {
             var mail = (string)Session["Mail"];
-            var messages = db.Messages.Where(x => x.Receiver == mail && x.Status==true).ToList();
-            var totalMessage = db.Messages.Where(x => x.Receiver == mail && x.Status==true).Count();
+            var id = db.Company.Where(x => x.Mail == mail).Select(y => y.ID).FirstOrDefault();
+            var messages = db.Messages.Where(x => x.Receiver == id && x.Status==true).ToList();
+            var totalMessage = db.Messages.Where(x => x.Receiver == id && x.Status==true).Count();
             ViewBag.totalMessage = totalMessage;
             return PartialView(messages);
         }
@@ -54,6 +56,19 @@ namespace CompanyCall.Controllers
             var totalActiveCall = db.InCall.Where(x => x.CallCompany == id && x.Durum==true).Count();      
             ViewBag.totalActCall = tactiveCall;
             return PartialView(activeCall);
+        }
+
+
+        public PartialViewResult Partial3()
+        {
+            return PartialView();
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
         }
 
 

@@ -21,6 +21,8 @@
         <AssociationConnector Association="IsTakipModel.FK_InCallDetails_InCall" />
         <EntityTypeShape EntityType="IsTakipModel.Messages" Width="1.5" PointX="7.375" PointY="7.75" />
         <EntityTypeShape EntityType="IsTakipModel.sysdiagrams" Width="1.5" PointX="8.375" PointY="4.75" />
+        <AssociationConnector Association="IsTakipModel.FK_Messages_Company" />
+        <AssociationConnector Association="IsTakipModel.FK_Messages_Company1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

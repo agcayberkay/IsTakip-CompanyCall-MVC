@@ -190,6 +190,47 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HomePage\css\bootstrap.css" />
+    <Content Include="HomePage\css\responsive.css" />
+    <Content Include="HomePage\css\style.css" />
+    <Content Include="HomePage\images\about-img.jpg" />
+    <Content Include="HomePage\images\Analytics team_Isometric.png" />
+    <Content Include="HomePage\images\Business conference _Monochromatic %281%29.png" />
+    <Content Include="HomePage\images\business-5258645_960_720.png" />
+    <Content Include="HomePage\images\client.png" />
+    <Content Include="HomePage\images\Data analyzing _Monochromatic.png" />
+    <Content Include="HomePage\images\facebook.png" />
+    <Content Include="HomePage\images\google-plus.png" />
+    <Content Include="HomePage\images\Information flow_Monochromatic %281%29.png" />
+    <Content Include="HomePage\images\Innovation _Isometric.png" />
+    <Content Include="HomePage\images\left-arrow-black.png" />
+    <Content Include="HomePage\images\left-arrow.png" />
+    <Content Include="HomePage\images\linkedin.png" />
+    <Content Include="HomePage\images\location.png" />
+    <Content Include="HomePage\images\menu.png" />
+    <Content Include="HomePage\images\next.png" />
+    <Content Include="HomePage\images\Personal data _Monochromatic %281%29.png" />
+    <Content Include="HomePage\images\prev.png" />
+    <Content Include="HomePage\images\right-arrow-black.png" />
+    <Content Include="HomePage\images\right-arrow.png" />
+    <Content Include="HomePage\images\s-1.jpg" />
+    <Content Include="HomePage\images\s-2.jpg" />
+    <Content Include="HomePage\images\s-3.jpg" />
+    <Content Include="HomePage\images\s-4.jpg" />
+    <Content Include="HomePage\images\search-icon.png" />
+    <Content Include="HomePage\images\slider-img.jpg" />
+    <Content Include="HomePage\images\Startup _Isometric1.png" />
+    <Content Include="HomePage\images\Startup_Isometric.png" />
+    <Content Include="HomePage\images\telephone.png" />
+    <Content Include="HomePage\images\twitter.png" />
+    <Content Include="HomePage\images\w-1.png" />
+    <Content Include="HomePage\images\w-2.png" />
+    <Content Include="HomePage\images\w-3.png" />
+    <Content Include="HomePage\images\w-4.png" />
+    <Content Include="HomePage\images\worker.png" />
+    <Content Include="HomePage\images\World wide web_Monochromatic.png" />
+    <Content Include="HomePage\js\bootstrap.js" />
+    <Content Include="HomePage\js\jquery-3.4.1.min.js" />
     <Content Include="login-form-08\css\bootstrap.min.css" />
     <Content Include="login-form-08\css\bootstrap\bootstrap-grid.css" />
     <Content Include="login-form-08\css\bootstrap\bootstrap-reboot.css" />
@@ -206,6 +247,7 @@
     <Content Include="login-form-08\fonts\images\bg_1.jpg" />
     <Content Include="login-form-08\fonts\images\icon-256x256.png" />
     <Content Include="login-form-08\fonts\images\logo.png" />
+    <Content Include="login-form-08\fonts\images\Siyah Arka Plan Üzerine Teknoloji Şirket Logosu %283%29.png" />
     <Content Include="login-form-08\index.html" />
     <Content Include="login-form-08\js\bootstrap.min.js" />
     <Content Include="login-form-08\js\jquery-3.3.1.min.js" />
@@ -225,6 +267,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="web2\web2\starter\assets\images\icons8_notification_60px.png" />
     <Content Include="web2\web2\starter\assets\css\style-starter.css" />
     <Content Include="web2\web2\starter\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="web2\web2\starter\assets\images\avatar1.jpg" />
@@ -508,6 +551,11 @@
     <Content Include="login-form-08\scss\bootstrap\_utilities.scss" />
     <Content Include="login-form-08\scss\bootstrap\_variables.scss" />
     <Content Include="login-form-08\scss\style.scss" />
+    <Content Include="HomePage\css\style.css.map" />
+    <Content Include="HomePage\css\style.scss" />
+    <Content Include="HomePage\images\1.webp" />
+    <None Include="HomePage\images\2" />
+    <Content Include="HomePage\images\meeting-1453895_960_720.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -565,6 +613,7 @@
     <Content Include="web2\web2\starter\assets\fonts\FontAwesome.otf" />
     <Content Include="Views\Default\Partial1.cshtml" />
     <Content Include="Views\Default\Partial2.cshtml" />
+    <Content Include="Views\Default\Partial3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

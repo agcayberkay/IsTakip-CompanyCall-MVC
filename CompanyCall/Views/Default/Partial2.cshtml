@@ -16,8 +16,8 @@
         @foreach (var y in Model)
         {
             <li>
-                <a href="#" class="grid">
-                    <div class="user_img"><img src="~/web2/web2/starter/assets/images/avatar1.jpg" alt=""></div>
+                <a href="/Defalut/InCallDetails" class="grid">
+                    <div class="user_img"><img src="~/web2/web2/starter/assets/images/icons8_notification_60px.png" alt=""></div>
                     <div class="notification_desc">
                         <p>@y.Subjects</p>
                         <span>@y.Descriptions</span>
@@ -28,7 +28,7 @@
 
         <li>
             <div class="notification_bottom">
-                <a href="#all" class="bg-primary">See all notifications</a>
+                <a href="/Default/ActiveCall" class="bg-primary">See all notifications</a>
             </div>
         </li>
     </ul>

@@ -61,8 +61,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Sender" Type="varchar(max)" />
-          <Property Name="Receiver" Type="varchar(max)" />
+          <Property Name="Sender" Type="int" />
+          <Property Name="Receiver" Type="int" />
           <Property Name="Subject" Type="varchar" MaxLength="100" />
           <Property Name="Message" Type="varchar(max)" />
           <Property Name="Dates" Type="date" />
@@ -136,6 +136,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Messages_Company">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Messages_Company1">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Receiver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MissionDetails_Tasks">
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="1" />
           <End Role="MissionDetails" Type="Self.MissionDetails" Multiplicity="*" />
@@ -203,6 +227,14 @@
             <End Role="InCall" EntitySet="InCall" />
             <End Role="InCallDetails" EntitySet="InCallDetails" />
           </AssociationSet>
+          <AssociationSet Name="FK_Messages_Company" Association="Self.FK_Messages_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Messages_Company1" Association="Self.FK_Messages_Company1">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
           <AssociationSet Name="FK_MissionDetails_Tasks" Association="Self.FK_MissionDetails_Tasks">
             <End Role="Tasks" EntitySet="Tasks" />
             <End Role="MissionDetails" EntitySet="MissionDetails" />
@@ -247,6 +279,8 @@
           <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="InCall" Relationship="Self.FK_InCall_Company" FromRole="Company" ToRole="InCall" />
           <Property Name="Sifre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Messages" Relationship="IsTakipModel.FK_Messages_Company" FromRole="Company" ToRole="Messages" />
+          <NavigationProperty Name="Messages1" Relationship="IsTakipModel.FK_Messages_Company1" FromRole="Company" ToRole="Messages" />
         </EntityType>
         <EntityType Name="Departments">
           <Key>
@@ -405,6 +439,14 @@
           </AssociationSet>
           <EntitySet Name="Messages" EntityType="IsTakipModel.Messages" />
           <EntitySet Name="sysdiagrams" EntityType="IsTakipModel.sysdiagrams" />
+          <AssociationSet Name="FK_Messages_Company" Association="IsTakipModel.FK_Messages_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Messages_Company1" Association="IsTakipModel.FK_Messages_Company1">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="InCallDetails">
           <Key>
@@ -434,12 +476,14 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Sender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Receiver" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sender" Type="Int32" />
+          <Property Name="Receiver" Type="Int32" />
           <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Dates" Type="DateTime" Precision="0" />
           <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Company" Relationship="IsTakipModel.FK_Messages_Company" FromRole="Messages" ToRole="Company" />
+          <NavigationProperty Name="Company1" Relationship="IsTakipModel.FK_Messages_Company1" FromRole="Messages" ToRole="Company" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -451,6 +495,30 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <Association Name="FK_Messages_Company">
+          <End Type="IsTakipModel.Company" Role="Company" Multiplicity="0..1" />
+          <End Type="IsTakipModel.Messages" Role="Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Messages_Company1">
+          <End Type="IsTakipModel.Company" Role="Company" Multiplicity="0..1" />
+          <End Type="IsTakipModel.Messages" Role="Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Receiver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
