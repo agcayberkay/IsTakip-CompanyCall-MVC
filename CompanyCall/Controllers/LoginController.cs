@@ -26,7 +26,7 @@ namespace CompanyCall.Controllers
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.Mail, false);
                 Session["Mail"] = bilgiler.Mail.ToString();
-                return RedirectToAction("Index", "Default");
+                return RedirectToAction("ActiveCall", "Default");
             }
             else
             {
